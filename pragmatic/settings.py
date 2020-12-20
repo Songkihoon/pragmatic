@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import environ
+import os
 from pathlib import Path
-
-import os, environ
 
 from django.urls import reverse_lazy
 
@@ -39,7 +39,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -53,6 +53,10 @@ INSTALLED_APPS = [
     'bootstrap4',
     'accountapp',
     'profileapp',
+    'articleapp',
+    'commnetapp',
+    'projectapp',
+    'subscribeapp',
 
 ]
 
@@ -137,7 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIR = [
     BASE_DIR / "static",
 ]
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 MEDIA_URL = '/media/'
