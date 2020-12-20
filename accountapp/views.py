@@ -32,8 +32,8 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
-        object_list = Article.object.filter(writer=self.get_object())
-        return super(AccountDetailView, self.get_context_data(object_list=object_list, **kwargs))
+        object_list = Article.objects.filter(writer=self.get_object())
+        return super(AccountDetailView, self).get_context_data(object_list=object_list, **kwargs)
 
 
 @method_decorator(has_ownership, 'get')

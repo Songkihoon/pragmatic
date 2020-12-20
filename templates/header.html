@@ -4,12 +4,13 @@
 
      </div>
      <div class="pragmatic_header_navbar">
+          <a href="{% url 'projectapp:list' %}"class="pragmatic_header_nav">
+         <span>Project</span>
+       </a>
         <a href="{% url 'articleapp:list' %}"class="pragmatic_header_nav">
          <span>Article</span>
        </a>
-         <a href="{% url 'projectapp:list' %}"class="pragmatic_header_nav">
-         <span>Project</span>
-       </a>
+
          <a href="{% url 'subscribeapp:list' %}"class="pragmatic_header_nav">
          <span>Subscription</span>
        </a>
